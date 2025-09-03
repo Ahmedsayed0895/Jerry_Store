@@ -2,24 +2,23 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/background">
+    android:background="@color/background"
+   >
 
-<!--top content-->
+    <!--top content-->
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/jerryImage"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/jerry"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="4dp"
-        android:layout_marginStart="16dp"
-        app:shapeAppearanceOverlay="@style/rounded_rectangle_12"
-        android:src="@drawable/jerry"/>
+        app:shapeAppearanceOverlay="@style/rounded_rectangle_12" />
 
     <TextView
         android:id="@+id/hi_jerry_text"
@@ -30,7 +29,6 @@
         android:fontFamily="@font/ibm_plex_sans_arabic_medium"
         android:text="@string/hi_jerry"
         android:textColor="@color/black"
-        android:textFontWeight="500"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@id/jerryImage"
         app:layout_constraintTop_toTopOf="@id/jerryImage" />
@@ -42,7 +40,6 @@
         android:fontFamily="@font/ibm_plex_sans_arabic"
         android:text="@string/which_tom_do_you_want_to_buy"
         android:textColor="@color/light_gray"
-        android:textFontWeight="400"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@id/hi_jerry_text"
         app:layout_constraintTop_toBottomOf="@id/hi_jerry_text" />
@@ -56,7 +53,7 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/stroke"
         android:contentDescription="@string/notifications_button"
-        android:src="@drawable/notification_01"
+        android:src="@drawable/notification"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,31 +63,28 @@
         android:background="@drawable/blue_circle"
         android:fontFamily="@font/ibm_plex_sans_arabic"
         android:gravity="center"
-        android:text="3"
+        android:text="@string/num3"
         android:textColor="@color/white"
-        android:textFontWeight="500"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/notification_icon"
         app:layout_constraintBottom_toTopOf="@+id/notification_icon"
-        app:layout_constraintTop_toTopOf="@+id/notification_icon"/>
+        app:layout_constraintEnd_toEndOf="@+id/notification_icon"
+        app:layout_constraintTop_toTopOf="@+id/notification_icon" />
 
-    <!--searching row-->
     <EditText
         android:id="@+id/search_bar"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/filter_icon"
-        app:layout_constraintStart_toStartOf="@id/jerryImage"
-        android:hint="@string/search_about_tom"
-        android:drawableStart="@drawable/search"
         android:background="@drawable/whit_container"
+        android:drawableStart="@drawable/search"
         android:drawablePadding="8dp"
         android:drawableTint="@color/gray"
+        android:hint="@string/search_about_tom"
         android:padding="12dp"
-
         android:textColor="@color/gray"
-        app:layout_constraintTop_toBottomOf="@+id/which_tom_text"/>
+        app:layout_constraintEnd_toStartOf="@+id/filter_icon"
+        app:layout_constraintStart_toStartOf="@id/jerryImage"
+        app:layout_constraintTop_toBottomOf="@+id/which_tom_text" />
 
     <ImageButton
         android:id="@+id/filter_icon"
@@ -99,7 +93,7 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/stroke"
         android:contentDescription="@string/notifications_button"
-        android:src="@drawable/notification_01"
+        android:src="@drawable/notification"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/search_bar" />
 
@@ -108,15 +102,15 @@
         android:id="@+id/banner_card"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/blue"
-        app:layout_constraintStart_toStartOf="@id/search_bar"
-        app:layout_constraintEnd_toEndOf="@id/filter_icon"
-        app:layout_constraintTop_toBottomOf="@id/search_bar"
         android:layout_marginTop="16dp"
+        android:background="@color/blue"
+        android:backgroundTint="@color/dark_blue"
         app:cardCornerRadius="16dp"
         app:cardElevation="0dp"
-        android:backgroundTint="@color/dark_blue"
-        >
+        app:layout_constraintEnd_toEndOf="@id/filter_icon"
+        app:layout_constraintStart_toStartOf="@id/search_bar"
+        app:layout_constraintTop_toBottomOf="@id/search_bar">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -125,12 +119,12 @@
                 android:id="@+id/banner_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/ibm_plex_sans_arabic_semibold"
                 android:text="@string/buy_1_tom_and_get_2_for_free"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                android:layout_marginStart="12dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -139,69 +133,472 @@
                 android:layout_width="177dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"
                 android:fontFamily="@font/ibm_plex_sans_arabic"
                 android:text="@string/adopt_tom_free_fail_free_guarantee"
                 android:textColor="#CCFFFFFF"
                 android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@id/banner_title"
-                app:layout_constraintTop_toBottomOf="@id/banner_title"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginBottom="12dp"/>
+                app:layout_constraintStart_toStartOf="@id/banner_title"
+                app:layout_constraintTop_toBottomOf="@id/banner_title" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+
     <ImageView
         android:layout_width="115dp"
         android:layout_height="120dp"
-        android:contentDescription="banner "
+        android:contentDescription="@string/banner"
         android:scaleType="centerCrop"
         android:src="@drawable/tom_with_money"
-        app:layout_constraintEnd_toEndOf="@id/banner_card"
         app:layout_constraintBottom_toBottomOf="@id/banner_card"
-        />
+        app:layout_constraintEnd_toEndOf="@id/banner_card" />
+
     <!--title row-->
     <TextView
         android:id="@+id/section_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:layout_marginBottom="12dp"
         android:fontFamily="@font/ibm_plex_sans_arabic_semibold"
         android:text="@string/cheap_tom_section"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@id/banner_card"
-        app:layout_constraintTop_toBottomOf="@id/banner_card"
-        android:layout_marginBottom="12dp"/>
+        app:layout_constraintTop_toBottomOf="@id/banner_card" />
+
     <TextView
         android:id="@+id/section_View_all"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="12dp"
         android:fontFamily="@font/ibm_plex_sans_arabic_medium"
         android:text="@string/view_all"
         android:textColor="@color/dark_blue"
         android:textSize="12sp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginTop="6dp"
         app:layout_constraintEnd_toStartOf="@id/section_View_all_arrow"
-        app:layout_constraintTop_toTopOf="@id/section_title"
-        android:layout_marginBottom="12dp"/>
+        app:layout_constraintTop_toTopOf="@id/section_title" />
+
     <ImageButton
         android:id="@+id/section_View_all_arrow"
         android:layout_width="12dp"
         android:layout_height="12dp"
+        android:layout_marginTop="3dp"
         android:background="@color/background"
         android:contentDescription="@string/section_view_all_arrow"
         android:src="@drawable/arrow_right_04"
-        android:layout_marginTop="3dp"
         app:layout_constraintEnd_toEndOf="@id/banner_card"
         app:layout_constraintTop_toTopOf="@id/section_View_all" />
 
 
     <!--tom cards-->
+    <!--Sport Tom card-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/sport_tom_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toStartOf="@id/lover_tom_card"
+        app:layout_constraintStart_toStartOf="@id/section_title"
+        app:layout_constraintTop_toBottomOf="@id/section_title">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/sport_tom_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="92dp"
+                android:fontFamily="@font/ibm_plex_sans_arabic_semibold"
+                android:text="@string/sport_tom"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/sport_tom_description"
+                android:layout_width="144dp"
+                android:layout_height="54dp"
+
+                android:fontFamily="@font/ibm_plex_sans_arabic"
+                android:gravity="center"
+                android:text="@string/he_runs_1_meter_trips_over_his_boot"
+                android:textColor="@color/light_gray"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sport_tom_title" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sport_tom_price_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@color/light_blue"
+                android:fontFamily="@font/ibm_plex_sans_arabic_medium"
+                android:padding="10dp"
+                android:text="@string/_5_3_cheeses"
+                android:textColor="@color/dark_blue"
+                android:textSize="12sp"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/money_bag_01"
+                app:iconGravity="textStart"
+                app:iconPadding="4dp"
+                app:iconTint="@color/dark_blue"
+                app:layout_constraintEnd_toStartOf="@id/sport_tom_add_to_cart_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sport_tom_description" />
+
+            <ImageButton
+                android:id="@+id/sport_tom_add_to_cart_button"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:layout_marginVertical="4dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/dark_blue_stroke"
+                android:contentDescription="@string/notifications_button"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/add_to_cart_icon"
+                app:layout_constraintBottom_toBottomOf="@id/sport_tom_price_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/sport_tom_price_button"
+                app:layout_constraintTop_toTopOf="@id/sport_tom_price_button"
+                app:tint="@color/dark_blue"
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:src="@drawable/tom_sport"
+        android:contentDescription="@string/sport_tom"
+        app:layout_constraintStart_toStartOf="@id/sport_tom_card"
+        app:layout_constraintEnd_toEndOf="@id/sport_tom_card"
+        app:layout_constraintBottom_toBottomOf="@id/sport_tom_card"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="145dp"
+        />
+    <!--Tom the lover card-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/lover_tom_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toTopOf="@id/sport_tom_card"
+        app:layout_constraintStart_toEndOf="@id/sport_tom_card"
+        app:layout_constraintEnd_toEndOf="@id/section_View_all_arrow">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/lover_tom_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="92dp"
+                android:fontFamily="@font/ibm_plex_sans_arabic_semibold"
+                android:text="@string/tom_the_lover"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lover_tom_description"
+                android:layout_width="144dp"
+                android:layout_height="54dp"
+                android:fontFamily="@font/ibm_plex_sans_arabic"
+                android:text="@string/he_loves_one_sidedly_and_is_beaten_by_the_other_side"
+                android:textColor="@color/light_gray"
+                android:textSize="12sp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lover_tom_title" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/lover_tom_price_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/light_blue"
+                android:text="@string/_5_cheeses"
+                android:textColor="@color/dark_blue"
+                app:icon="@drawable/money_bag_01"
+                app:iconGravity="textStart"
+                android:textSize="12sp"
+                android:fontFamily="@font/ibm_plex_sans_arabic_medium"
+                app:iconTint="@color/dark_blue"
+                app:cornerRadius="8dp"
+                android:padding="10dp"
+                app:iconPadding="4dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/lover_tom_add_to_cart_button"
+
+                app:layout_constraintTop_toBottomOf="@id/lover_tom_description"
+                />
+            <ImageButton
+                android:id="@+id/lover_tom_add_to_cart_button"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginVertical="4dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/dark_blue_stroke"
+                android:contentDescription="@string/notifications_button"
+                android:src="@drawable/add_to_cart_icon"
+                app:tint="@color/dark_blue"
+                app:layout_constraintStart_toEndOf="@id/lover_tom_price_button"
+                app:layout_constraintTop_toTopOf="@id/lover_tom_price_button"
+                app:layout_constraintBottom_toBottomOf="@id/lover_tom_price_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+
+                />
 
 
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </androidx.cardview.widget.CardView>
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:src="@drawable/tom_lover"
+        android:contentDescription="@string/sport_tom"
+        app:layout_constraintStart_toStartOf="@id/lover_tom_card"
+        app:layout_constraintEnd_toEndOf="@id/lover_tom_card"
+        app:layout_constraintBottom_toBottomOf="@id/lover_tom_card"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="145dp"
+        />
+    <!--Tom the bomb card-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bomb_tom_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toBottomOf="@id/sport_tom_card"
+        app:layout_constraintStart_toStartOf="@id/sport_tom_card"
+        app:layout_constraintEnd_toEndOf="@id/sport_tom_card">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/bomb_tom_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="92dp"
+                android:fontFamily="@font/ibm_plex_sans_arabic_semibold"
+                android:text="@string/tom_the_bomb"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/bomb_tom_description"
+                android:layout_width="144dp"
+                android:layout_height="54dp"
+                android:fontFamily="@font/ibm_plex_sans_arabic"
+                android:text="@string/he_blows_himself_up_before_jerry_can_catch_him"
+                android:textColor="@color/light_gray"
+                android:textSize="12sp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bomb_tom_title" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bomb_tom_price_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/light_blue"
+                android:text="@string/_10_cheeses"
+                android:textColor="@color/dark_blue"
+                app:icon="@drawable/money_bag_01"
+                app:iconGravity="textStart"
+                android:textSize="12sp"
+                android:fontFamily="@font/ibm_plex_sans_arabic_medium"
+                app:iconTint="@color/dark_blue"
+                app:cornerRadius="8dp"
+                android:padding="10dp"
+                app:iconPadding="4dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/bomb_tom_add_to_cart_button"
+
+                app:layout_constraintTop_toBottomOf="@id/bomb_tom_description"
+                />
+            <ImageButton
+                android:id="@+id/bomb_tom_add_to_cart_button"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginVertical="4dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/dark_blue_stroke"
+                android:contentDescription="@string/notifications_button"
+                android:src="@drawable/add_to_cart_icon"
+                app:tint="@color/dark_blue"
+                app:layout_constraintStart_toEndOf="@id/bomb_tom_price_button"
+                app:layout_constraintTop_toTopOf="@id/bomb_tom_price_button"
+                app:layout_constraintBottom_toBottomOf="@id/bomb_tom_price_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:src="@drawable/tom_bomb"
+        android:contentDescription="@string/sport_tom"
+        app:layout_constraintStart_toStartOf="@id/bomb_tom_card"
+        app:layout_constraintEnd_toEndOf="@id/bomb_tom_card"
+        app:layout_constraintBottom_toBottomOf="@id/bomb_tom_card"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="145dp"
+        />
+    <!--spy Tom card-->
+    <!--frozen Tom card-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/frozen_tom_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toBottomOf="@id/bomb_tom_card"
+        app:layout_constraintStart_toStartOf="@id/bomb_tom_card"
+        app:layout_constraintEnd_toEndOf="@id/bomb_tom_card">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/frozen_tom_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="92dp"
+                android:fontFamily="@font/ibm_plex_sans_arabic_semibold"
+                android:text="@string/frozen_tom"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/frozen_tom_description"
+                android:layout_width="144dp"
+                android:layout_height="54dp"
+                android:fontFamily="@font/ibm_plex_sans_arabic"
+                android:text="@string/he_was_chasing_jerry_he_froze_after_the_first_look"
+                android:textColor="@color/light_gray"
+                android:textSize="12sp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/frozen_tom_title" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/frozen_tom_price_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/light_blue"
+                android:text="@string/_10_cheeses"
+                android:textColor="@color/dark_blue"
+                app:icon="@drawable/money_bag_01"
+                app:iconGravity="textStart"
+                android:textSize="12sp"
+                android:fontFamily="@font/ibm_plex_sans_arabic_medium"
+                app:iconTint="@color/dark_blue"
+                app:cornerRadius="8dp"
+                android:padding="10dp"
+                app:iconPadding="4dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/frozen_tom_add_to_cart_button"
+
+                app:layout_constraintTop_toBottomOf="@id/frozen_tom_description"
+                />
+            <ImageButton
+                android:id="@+id/frozen_tom_add_to_cart_button"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginVertical="4dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/dark_blue_stroke"
+                android:contentDescription="@string/notifications_button"
+                android:src="@drawable/add_to_cart_icon"
+                app:tint="@color/dark_blue"
+                app:layout_constraintStart_toEndOf="@id/frozen_tom_price_button"
+                app:layout_constraintTop_toTopOf="@id/frozen_tom_price_button"
+                app:layout_constraintBottom_toBottomOf="@id/frozen_tom_price_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:src="@drawable/tom_frozen"
+        android:contentDescription="@string/sport_tom"
+        app:layout_constraintStart_toStartOf="@id/frozen_tom_card"
+        app:layout_constraintEnd_toEndOf="@id/frozen_tom_card"
+        app:layout_constraintBottom_toBottomOf="@id/frozen_tom_card"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="145dp"
+        />
+    <!--sleeping Tom card-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
