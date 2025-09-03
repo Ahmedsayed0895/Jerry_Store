@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/background">
+
+<!--top content-->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/jerryImage"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="16dp"
+        app:shapeAppearanceOverlay="@style/rounded_rectangle_12"
+        android:src="@drawable/jerry"/>
+
+    <TextView
+        android:id="@+id/hi_jerry_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/ibm_plex_sans_arabic_medium"
+        android:text="@string/hi_jerry"
+        android:textColor="@color/black"
+        android:textFontWeight="500"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/jerryImage"
+        app:layout_constraintTop_toTopOf="@id/jerryImage" />
+
+    <TextView
+        android:id="@+id/which_tom_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ibm_plex_sans_arabic"
+        android:text="@string/which_tom_do_you_want_to_buy"
+        android:textColor="@color/light_gray"
+        android:textFontWeight="400"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/hi_jerry_text"
+        app:layout_constraintTop_toBottomOf="@id/hi_jerry_text" />
+
+
+    <ImageButton
+        android:id="@+id/notification_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/stroke"
+        android:contentDescription="@string/notifications_button"
+        android:src="@drawable/notification_01"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:background="@drawable/blue_circle"
+        android:fontFamily="@font/ibm_plex_sans_arabic"
+        android:gravity="center"
+        android:text="3"
+        android:textColor="@color/white"
+        android:textFontWeight="500"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/notification_icon"
+        app:layout_constraintBottom_toTopOf="@+id/notification_icon"
+        app:layout_constraintTop_toTopOf="@+id/notification_icon"/>
+
+    <!--searching row-->
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/filter_icon"
+        app:layout_constraintStart_toStartOf="@id/jerryImage"
+        android:hint="@string/search_about_tom"
+        android:drawableStart="@drawable/search"
+        android:background="@drawable/whit_container"
+        android:drawablePadding="8dp"
+        android:drawableTint="@color/gray"
+        android:padding="12dp"
+
+        android:textColor="@color/gray"
+        app:layout_constraintTop_toBottomOf="@+id/which_tom_text"/>
+
+    <ImageButton
+        android:id="@+id/filter_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/stroke"
+        android:contentDescription="@string/notifications_button"
+        android:src="@drawable/notification_01"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/search_bar" />
+
+    <!--banner-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/banner_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        app:layout_constraintStart_toStartOf="@id/search_bar"
+        app:layout_constraintEnd_toEndOf="@id/filter_icon"
+        app:layout_constraintTop_toBottomOf="@id/search_bar"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        android:backgroundTint="@color/dark_blue"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/banner_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/ibm_plex_sans_arabic_semibold"
+                android:text="@string/buy_1_tom_and_get_2_for_free"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/banner_description"
+                android:layout_width="177dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/ibm_plex_sans_arabic"
+                android:text="@string/adopt_tom_free_fail_free_guarantee"
+                android:textColor="#CCFFFFFF"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/banner_title"
+                app:layout_constraintTop_toBottomOf="@id/banner_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="12dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <ImageView
+        android:layout_width="115dp"
+        android:layout_height="120dp"
+        android:contentDescription="banner "
+        android:scaleType="centerCrop"
+        android:src="@drawable/tom_with_money"
+        app:layout_constraintEnd_toEndOf="@id/banner_card"
+        app:layout_constraintBottom_toBottomOf="@id/banner_card"
+        />
+    <!--title row-->
+    <TextView
+        android:id="@+id/section_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/ibm_plex_sans_arabic_semibold"
+        android:text="@string/cheap_tom_section"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/banner_card"
+        app:layout_constraintTop_toBottomOf="@id/banner_card"
+        android:layout_marginBottom="12dp"/>
+    <TextView
+        android:id="@+id/section_View_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ibm_plex_sans_arabic_medium"
+        android:text="@string/view_all"
+        android:textColor="@color/dark_blue"
+        android:textSize="12sp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintEnd_toStartOf="@id/section_View_all_arrow"
+        app:layout_constraintTop_toTopOf="@id/section_title"
+        android:layout_marginBottom="12dp"/>
+    <ImageButton
+        android:id="@+id/section_View_all_arrow"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:background="@color/background"
+        android:contentDescription="@string/section_view_all_arrow"
+        android:src="@drawable/arrow_right_04"
+        android:layout_marginTop="3dp"
+        app:layout_constraintEnd_toEndOf="@id/banner_card"
+        app:layout_constraintTop_toTopOf="@id/section_View_all" />
+
+
+    <!--tom cards-->
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
