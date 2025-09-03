@@ -22,4 +22,9 @@
     <string name="_10_cheeses">10 cheeses</string>
     <string name="frozen_tom">Frozen Tom</string>
     <string name="he_was_chasing_jerry_he_froze_after_the_first_look">He was chasing Jerry, he froze after the first look</string>
+    <string name="disguises_itself_as_a_table">Disguises itself as a table.</string>
+    <string name="spy_tom">Spy Tom</string>
+    <string name="he_doesn_t_chase_anyone_he_just_snores_in_stereo">He doesn\'t chase anyone, he just snores in stereo.</string>
+    <string name="sleeping_tom">Sleeping Tom</string>
+    <string name="_12_cheeses">12 cheeses</string>
 </resources>
